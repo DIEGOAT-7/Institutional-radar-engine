@@ -1,0 +1,9 @@
+pandas
+numpy
+sqlalchemy
+yfinance
+sec-edgar-downloader
+pyyaml
+networkx
+requests
+lxml

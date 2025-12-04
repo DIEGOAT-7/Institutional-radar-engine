@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv
+env/
+venv/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Data (NUNCA subir datos reales a Git)
+data/
+!data/.gitkeep
+
+# Configuración sensible
+config/settings.yaml
