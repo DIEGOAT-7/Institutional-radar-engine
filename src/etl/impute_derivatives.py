@@ -23,7 +23,7 @@ def get_text(elem, tag):
     return elem.find(tag).text if elem.find(tag) is not None else None
 
 def impute_derivatives():
-    print("🚑 INICIANDO IMPUTACIÓN QUIRÚRGICA DE DERIVADOS...")
+    print("INICIANDO IMPUTACIÓN QUIRÚRGICA DE DERIVADOS...")
     db = next(get_db())
 
     # LIMPIEZA PREVIA: Borrar solo la tabla de derivados para evitar duplicados
