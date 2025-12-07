@@ -33,7 +33,7 @@ def impute_derivatives():
     print("   Tabla vacía y lista.")
 
     # CACHÉ EN MEMORIA (Para velocidad extrema)
-    print("⏳ Cargando mapas de identidad (Funds/Companies)...")
+    print(" Cargando mapas de identidad (Funds/Companies)...")
     # Diccionario: {CIK_string: ID_int}
     fund_map = {f.cik: f.id for f in db.query(Fund).all()} 
     # Diccionario: {CUSIP_string: ID_int}
