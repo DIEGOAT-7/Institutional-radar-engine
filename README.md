@@ -241,7 +241,7 @@ If your “Clone” performs like the real fund, you have reverse-engineered its
 
 ### **Project F: “Graph Network Contagion” (Systemic Risk Analysis)**
 
-- **Objective:** What we started doing with the graph. Measure “Centrality” to understand contagion risk.
+- **Objective:** What we started doing with the graph. Measure “Centrality” to understand contagion risk.  
 
 - **Science:** Graph Theory (NetworkX).
 
