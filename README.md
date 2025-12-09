@@ -254,7 +254,7 @@ If your “Clone” performs like the real fund, you have reverse-engineered its
 **Model:** Stress simulation.  
 If Fund A loses X capital, it must sell asset Y.
 
-## 🚀 **How to obtain the data: This repository does not include raw data due to size. To generate the Data Warehouse on your local machine:**
+## **How to obtain the data: This repository does not include raw data due to size. To generate the Data Warehouse on your local machine:**
 
 1. Clone the repo.
 
