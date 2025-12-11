@@ -249,7 +249,7 @@ If your “Clone” performs like the real fund, you have reverse-engineered its
 
 **Tables to use:**
 
-- **funds, holdings, companies.**
+- **funds, holdings, companies.** 
 
 **Model:** Stress simulation.  
 If Fund A loses X capital, it must sell asset Y.
