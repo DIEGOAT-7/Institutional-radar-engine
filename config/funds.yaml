@@ -3,7 +3,7 @@
 # Curado para detectar movimientos en Tecnología, EV y Tendencias Globales.
 
 selected_funds:
-  # TIER 1: LOS DUEÑOS DEL MUNDO (Asset Managers Pasivos/Masivos)
+  # TIER 1: LOS MAS GRANDES (Asset Managers Pasivos/Masivos)
   # Mueven el mercado por puro volumen. Si ellos venden, el mundo tiembla.
   - name: "BlackRock Inc."
     cik: "0001364742"
