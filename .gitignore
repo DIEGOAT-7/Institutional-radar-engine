@@ -11,7 +11,6 @@ venv/
 # Jupyter
 .ipynb_checkpoints
 
-# Data (NUNCA subir datos reales a Git)
 data/
 !data/.gitkeep
 
