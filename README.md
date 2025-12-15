@@ -20,6 +20,7 @@ This repository contains the data engineering required to build an Institutional
 
 - **Phase 3 (Future):** Integration of Macroeconomic Data (FED Rates, Inflation) and expansion of the supply_chain table through NLP on news.
 
+    - 
 
 ![alt text](diagram_db.png)
 
