@@ -47,10 +47,10 @@ def run_downloader():
             # Descargamos los últimos 4 trimestres (1 año) para probar rápido.
             # Luego podemos subir esto a 12 (3 años).
             num_filings = dl.get("13F-HR", cik, limit=4)
-            print(f"   ✅ Éxito. Archivos guardados en data/raw")
+            print(f"    Éxito. Archivos guardados en data/raw")
             
         except Exception as e:
-            print(f"   ❌ Error con {name}: {e}")
+            print(f"    Error con {name}: {e}")
 
     print("\n" + "="*50)
     print("ETL DE DESCARGA FINALIZADO")
