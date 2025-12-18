@@ -44,12 +44,12 @@ def fetch_executives():
             if new_execs:
                 db.bulk_save_objects(new_execs)
                 db.commit()
-                print(f"✅ {len(new_execs)} agregados.")
+                print(f" {len(new_execs)} agregados.")
             else:
-                print("⚠️ Sin datos.")
+                print(" Sin datos.")
                 
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f" Error: {e}")
         
         # Respetar límites de API
         # time.sleep(0.2) 
