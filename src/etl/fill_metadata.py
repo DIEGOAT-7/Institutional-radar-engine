@@ -18,7 +18,7 @@ def fill_gaps():
     count = 0
     for c in targets:
         try:
-            print(f"   🌍 {c.ticker}...", end=" ")
+            print(f"    {c.ticker}...", end=" ")
             info = yf.Ticker(c.ticker).info
             
             # Solo actualizamos si Yahoo nos da algo útil
@@ -30,7 +30,7 @@ def fill_gaps():
                 count += 1
                 print("✅")
             else:
-                print("⚠️ Sin datos en Yahoo")
+                print(" Sin datos en Yahoo")
                 
             # Guardamos cada 10 para no perder progreso
             if count % 10 == 0:
@@ -43,7 +43,7 @@ def fill_gaps():
 
     db.commit()
     db.close()
-    print(f"🏁 Proceso terminado. {count} empresas enriquecidas.")
+    print(f" Proceso terminado. {count} empresas enriquecidas.")
 
 if __name__ == "__main__":
     fill_gaps()
