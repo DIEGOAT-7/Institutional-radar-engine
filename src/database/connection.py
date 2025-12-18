@@ -22,7 +22,7 @@ def init_db():
     print(f"Conectando a base de datos en: {DB_PATH}")
     # Esta línea mágica convierte las clases de Python en tablas SQL reales
     Base.metadata.create_all(bind=engine)
-    print("✅ Tablas creadas exitosamente (Schema Loaded).")
+    print("Tablas creadas exitosamente (Schema Loaded).")
 
 def get_db():
     """Dependencia para obtener una sesión de base de datos."""
