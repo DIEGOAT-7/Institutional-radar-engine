@@ -39,7 +39,7 @@ def map_tickers():
         result = db.execute(query, {"t": ticker, "n": f"%{name_pattern}%"})
         
         if result.rowcount > 0:
-            print(f"   ✅ {name_pattern} -> {ticker} ({result.rowcount} registros actualizados)")
+            print(f"   {name_pattern} -> {ticker} ({result.rowcount} registros actualizados)")
             count += result.rowcount
             
     db.commit()
