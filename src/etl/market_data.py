@@ -18,7 +18,7 @@ def fetch_market_data():
     start_date = end_date - timedelta(days=365*3)
     
     for c in companies:
-        print(f"   ⬇️ {c.ticker}...", end=" ")
+        print(f"    {c.ticker}...", end=" ")
         
         try:
             # 1. Metadatos (Sector/Industria) si faltan
@@ -38,7 +38,7 @@ def fetch_market_data():
             if last_price:
                 current_start = last_price.date + timedelta(days=1)
                 if current_start >= end_date.date():
-                    print("✅ Actualizado.")
+                    print(" Actualizado.")
                     continue
             else:
                 current_start = start_date
@@ -47,7 +47,7 @@ def fetch_market_data():
             df = yf.download(c.ticker, start=current_start, end=end_date, progress=False, multi_level_index=False)
             
             if df.empty:
-                print("⚠️ Sin datos nuevos.")
+                print(" Sin datos nuevos.")
                 continue
                 
             prices_batch = []
@@ -65,10 +65,10 @@ def fetch_market_data():
             
             db.bulk_save_objects(prices_batch)
             db.commit()
-            print(f"✅ +{len(prices_batch)} días.")
+            print(f" +{len(prices_batch)} días.")
             
         except Exception as e:
-            print(f"❌ {e}")
+            print(f" {e}")
             
     db.close()
     print("🏁 Tabla 'stock_prices' lista.")
