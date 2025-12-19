@@ -5,7 +5,7 @@ from src.database.models import Company
 import time
 
 def fill_gaps():
-    db = next(get_db())
+    db = next(get_db()) 
     
     # Buscamos empresas que tienen Ticker PERO les falta Sector o País
     targets = db.query(Company).filter(
