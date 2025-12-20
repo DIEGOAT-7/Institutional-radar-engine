@@ -27,7 +27,7 @@ def impute_derivatives():
     db = next(get_db())
 
     # LIMPIEZA PREVIA: Borrar solo la tabla de derivados para evitar duplicados
-    print("🧹 Limpiando tabla 'derivatives' antigua...")
+    print("Limpiando tabla 'derivatives' antigua...")
     db.execute(text("DELETE FROM derivatives"))
     db.commit()
     print("   Tabla vacía y lista.")
@@ -44,7 +44,7 @@ def impute_derivatives():
     # BUSCAR ARCHIVOS
     # Buscamos recursivamente en raw (donde sea que estén)
     all_files = list(DATA_RAW_PATH.rglob("*.txt"))
-    print(f"📂 Escaneando {len(all_files)} archivos de reportes...")
+    print(f"Escaneando {len(all_files)} archivos de reportes...")
 
     total_derivs = 0
 
