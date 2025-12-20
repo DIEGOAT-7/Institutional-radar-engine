@@ -71,7 +71,7 @@ def fetch_market_data():
             print(f" {e}")
             
     db.close()
-    print("🏁 Tabla 'stock_prices' lista.")
+    print(" Tabla 'stock_prices' lista.")
 
 if __name__ == "__main__":
     fetch_market_data()
