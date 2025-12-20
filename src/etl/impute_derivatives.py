@@ -129,7 +129,7 @@ def impute_derivatives():
     db.commit()
     db.close()
     print("="*50)
-    print(f"✅ OPERACIÓN COMPLETADA. Total derivados rescatados: {total_derivs}")
+    print(f"OPERACIÓN COMPLETADA. Total derivados rescatados: {total_derivs}")
     print("="*50)
 
 if __name__ == "__main__":
