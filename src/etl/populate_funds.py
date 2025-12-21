@@ -14,7 +14,7 @@ def populate():
     db = next(get_db())
     funds_list = config['selected_funds']
     
-    print(f"🌱 Intentando registrar {len(funds_list)} fondos...")
+    print(f" Intentando registrar {len(funds_list)} fondos...")
     
     registrados = 0
     ya_existian = 0
@@ -37,19 +37,19 @@ def populate():
                 # Guardamos INMEDIATAMENTE. Si este falla, no afecta a los demás.
                 db.commit() 
                 
-                print(f"   ✅ Guardado en DB: {item['name']}")
+                print(f"   Guardado en DB: {item['name']}")
                 registrados += 1
             else:
-                print(f"   ℹ️  Ya estaba en DB: {item['name']}")
+                print(f"    Ya estaba en DB: {item['name']}")
                 ya_existian += 1
                 
         except IntegrityError:
             db.rollback() # Limpiamos el error solo de este fondo
-            print(f"   ⚠️  Duplicado/Error detectado en: {item['name']} (Saltando...)")
+            print(f"    Duplicado/Error detectado en: {item['name']} (Saltando...)")
             errores += 1
         except Exception as e:
             db.rollback()
-            print(f"   ❌ Error desconocido en {item['name']}: {e}")
+            print(f"   Error desconocido en {item['name']}: {e}")
             errores += 1
             
     db.close()
