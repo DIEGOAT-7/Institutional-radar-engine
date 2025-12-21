@@ -24,7 +24,7 @@ def extract_xml_from_text(file_path):
         if match: return match.group(0)
         return None
     except Exception as e:
-        print(f"      ❌ Error leyendo archivo {file_path.name}: {e}")
+        print(f"      Error leyendo archivo {file_path.name}: {e}")
         return None
 
 def parse_13f_filing(file_path, cik, db: Session):
@@ -47,7 +47,7 @@ def parse_13f_filing(file_path, cik, db: Session):
         fund = db.query(Fund).filter(Fund.cik == cik_no_zeros).first()
 
     if not fund:
-        print(f"      ⚠️ CIK {cik} (ni {cik.lstrip('0')}) encontrado en tabla 'funds'. Ejecuta populate_funds.py")
+        print(f"      CIK {cik} (ni {cik.lstrip('0')}) encontrado en tabla 'funds'. Ejecuta populate_funds.py")
         return
 
     report_date = datetime.fromtimestamp(file_path.stat().st_mtime).date()
@@ -132,7 +132,7 @@ def parse_13f_filing(file_path, cik, db: Session):
             
     db.commit()
     if count_stock > 0 or count_deriv > 0:
-        print(f"      ✅ Guardadas: {count_stock} Acciones | {count_deriv} Derivados (Puts/Calls)")
+        print(f"      Guardadas: {count_stock} Acciones | {count_deriv} Derivados (Puts/Calls)")
 
 def run_parser():
     print("Iniciando Parser V2 (Soporte Derivados)...")
@@ -143,7 +143,7 @@ def run_parser():
     cik_folders = list(set([f for f in all_folders if f.is_dir() and f.name.isdigit() and len(f.name) > 4]))
     
     if not cik_folders:
-        print("❌ ERROR: No encontré carpetas de CIK en data/raw")
+        print(" ERROR: No encontré carpetas de CIK en data/raw")
         return
 
     print(f"Procesando {len(cik_folders)} Fondos...")
