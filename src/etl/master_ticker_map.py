@@ -30,9 +30,9 @@ def run_master_mapping():
         sec_df = pd.DataFrame.from_dict(raw_data, orient='index')
         # Normalizar nombres del SEC
         sec_df['clean_title'] = sec_df['title'].apply(normalize_name)
-        print(f"✅ Listo. {len(sec_df)} empresas oficiales cargadas.")
+        print(f"Listo. {len(sec_df)} empresas oficiales cargadas.")
     except Exception as e:
-        print(f"❌ Error descargando SEC data: {e}")
+        print(f"Error descargando SEC data: {e}")
         return
 
     # --- 2. OBTENER LISTA S&P 500 (Wikipedia) ---
@@ -40,15 +40,15 @@ def run_master_mapping():
     try:
         sp500_table = pd.read_html('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')[0]
         sp500_tickers = set(sp500_table['Symbol'].unique())
-        print(f"✅ Listo. {len(sp500_tickers)} componentes identificados.")
+        print(f"Listo. {len(sp500_tickers)} componentes identificados.")
     except Exception as e:
-        print(f"⚠️ Error descargando S&P 500: {e}")
+        print(f" Error descargando S&P 500: {e}")
         sp500_tickers = set()
 
     # --- 3. PROCESO DE MAPEO EN BASE DE DATOS ---
     # Traemos empresas que NO tienen Ticker o NO sabemos si son SP500
     companies = db.query(Company).all()
-    print(f"🔍 Analizando {len(companies)} empresas en nuestra DB...")
+    print(f"Analizando {len(companies)} empresas en nuestra DB...")
     
     updated_tickers = 0
     updated_sp500 = 0
@@ -82,7 +82,7 @@ def run_master_mapping():
     db.close()
     
     print("-" * 50)
-    print(f"✅ RESULTADOS:")
+    print(f" RESULTADOS:")
     print(f"   - Tickers Nuevos Asignados: {updated_tickers}")
     print(f"   - Flags S&P 500 Actualizados: {updated_sp500}")
     print("-" * 50)
