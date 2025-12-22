@@ -28,7 +28,7 @@ def fill_gaps():
                 c.country = info.get('country')
                 c.description = info.get('longBusinessSummary', '')[:500] # Primeros 500 chars
                 count += 1
-                print("✅")
+                print("Ok")
             else:
                 print(" Sin datos en Yahoo")
                 
@@ -39,7 +39,7 @@ def fill_gaps():
             time.sleep(0.1) # Pausa técnica
             
         except Exception as e:
-            print(f"❌ {e}")
+            print(f"Error {e}")
 
     db.commit()
     db.close()
