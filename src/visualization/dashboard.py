@@ -12,7 +12,7 @@ st.set_page_config(
     page_title="Institutional Radar",
     layout="wide",
     initial_sidebar_state="expanded",
-    page_icon="📡"
+    page_icon=""
 )
 
 # Estilos CSS para simular Dark Mode profesional
@@ -69,18 +69,18 @@ def build_pyvis_network(G, physics=True):
 
 # INTERFAZ PRINCIPAL
 def main():
-    st.title("📡 Institutional Radar // Terminal V1")
+    st.title(" Institutional Radar // Terminal V1")
     st.markdown("---")
 
     # 1. Sidebar: Controles
     with st.sidebar:
-        st.header("⚙️ Configuración")
+        st.header(" Configuración")
         physics_on = st.checkbox("Activar Físicas (Grafo Vivo)", value=True)
         st.info("Visualizando Ecosistema EV & Tech.\nDatos procesados de SEC 13F.")
 
     # 2. Cargar Datos
     if not GRAPH_PATH.exists():
-        st.error("⚠️ No se encontró el archivo del grafo. Ejecuta 'src/features/build_graph.py' primero.")
+        st.error(" No se encontró el archivo del grafo. Ejecuta 'src/features/build_graph.py' primero.")
         return
 
     G = load_graph()
@@ -115,7 +115,7 @@ def main():
 
     # 5. Tabla de Detalles (Drill Down)
     st.markdown("---")
-    st.subheader("📋 Datos del Mercado (Top 10 PageRank)")
+    st.subheader("Datos del Mercado (Top 10 PageRank)")
     
     # Crear un DataFrame rápido con los datos del grafo
     data = []
